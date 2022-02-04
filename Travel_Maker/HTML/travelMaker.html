@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Maker</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../Resource/CSS/travelMaker.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(function(){
+            $('.movie-list').slick({
+              
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo">TRAVEL MAKER</h1>
+            </div>
+            <div class="login-container">
+            <form action="" class="login-container">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="text"> ID : </label>
+                        </td>
+                        <td>
+                            <input type="text" class="userId">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="text"> PW : </label>
+                        </td>
+                        <td>
+                            <input type="text" class="userPwd">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            </div>
+            <div class="btn-container">
+                <div class="join" onclick="join();">join</div>
+                <div class="login" onclick="login();">Login</div>
+            </div>
+    </div>
+    <div class="sidebar">
+        <a href="#">
+            <i class='bar-icon bx bx-search' ></i>
+        </a>
+        <a href="#">
+            <i class='bar-icon bx bx-heart-circle'></i>
+        </a>
+        <a href="#">
+            <i class='bar-icon bx bx-map-alt'></i>
+        </a>
+        <a href="#">
+            <i class='bar-icon bx bx-comment' ></i>
+        </a>
+        <a href="#">
+            <i class='bar-icon bx bx-phone' ></i>
+        </a>
+        <a href="#">
+            <i class='bar-icon bx bx-cog' ></i>
+        </a>
+    </div>
+    <div class="container">
+        <div class="content-container">
+            <div class="featured-content" 
+            style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515),
+            url('../Resource/IMAGES/pexels-pixabay-220201.jpg');">
+                <h1 class="country">EUROPE</h1>
+                <p class="desc">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, ducimus optio! Explicabo nostrum 
+                    saepe quia cupiditate illum delectus ducimus dicta impedit, reprehenderit quaerat nisi nam illo, voluptate perspiciatis reiciendis maiores.
+                </p>
+            </div>
+        </div>
+        <div class="movie-list-container">
+            <h1 class="moive-list-title">LONDON</h1>
+            <div class="movie-list-wrapper">
+                <div class="movie-list" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/007.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutBoy.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutTime.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/bridget.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/closer.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/harry.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/loveAct.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                </div>
+                <i class='bx bx-chevrons-right arrow'></i>
+            </div>  
+        </div>
+        <div class="movie-list-container">
+            <h1 class="moive-list-title">LONDON</h1>
+            <div class="movie-list-wrapper">
+                <div class="movie-list" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/007.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutBoy.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutTime.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/bridget.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/closer.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/harry.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/loveAct.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                </div>
+                <i class='bx bx-chevrons-right arrow'></i>
+            </div>  
+        </div>
+        <div class="movie-list-container">
+            <h1 class="moive-list-title">LONDON</h1>
+            <div class="movie-list-wrapper">
+                <div class="movie-list" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/007.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutBoy.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutTime.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/bridget.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/closer.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/harry.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/loveAct.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                </div>
+                <i class='bx bx-chevrons-right arrow'></i>
+            </div>  
+        </div>
+        <div class="movie-list-container">
+            <h1 class="moive-list-title">LONDON</h1>
+            <div class="movie-list-wrapper">
+                <div class="movie-list" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/007.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutBoy.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutTime.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/bridget.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/closer.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/harry.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/loveAct.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                </div>
+                <i class='bx bx-chevrons-right arrow'></i>
+            </div>  
+        </div>
+        <div class="movie-list-container">
+            <h1 class="moive-list-title">LONDON</h1>
+            <div class="movie-list-wrapper">
+                <div class="movie-list" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/007.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutBoy.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/aboutTime.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/bridget.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/closer.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/harry.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img class="movie-img "src="../Resource/IMAGES/loveAct.jpg" alt="">
+                        </a>
+                        <span class="mTitle">007 sky fall</span>
+                    </div>
+                </div>
+                <i class='bx bx-chevrons-right arrow'></i>
+            </div>  
+        </div>
+    </div>
+</body>
+</html>

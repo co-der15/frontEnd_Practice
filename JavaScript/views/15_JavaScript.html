@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 객체</title>
+    <style>
+        div {
+            width : 500px;
+            height: auto;
+            padding: 10px;
+            background : lemonchiffon;
+        }
+    </style>
+</head>
+<body>
+    <h1>자바스크립트 객체</h1>
+
+    <!-- h3{객체 선언 및 호출} -->
+    <h3>객체 선언 및 호출</h3>
+
+    <button onclick="test1();">실행 확인</button>
+    <div id="area1"></div>
+
+    <script>
+        function test1(){
+            var product = {
+                name : '허니버터아몬드',
+                type : 'nuts',
+                recipe : ['honey', 'butter', 'almond'],
+                origin : 'korea'
+            }; // JSON
+
+            console.log(product);
+
+            var area1 = document.getElementById('area1');
+
+            area1.innerHTML = 'product : ' + product + "<br>";
+
+            // 객체 키로 값 추출하기
+            area1.innerHTML += "product['name'] : " + product['name'] + "<br>";
+            area1.innerHTML += "product['type'] : " + product['type'] + "<br>";
+            area1.innerHTML += "product['recipe'] : " + product['recipe'] + "<br>";
+            area1.innerHTML += "product['origin'] : " + product['origin'] + "<br>";
+
+            area1.innerHTML += "-----------------------------------<br>";
+
+            area1.innerHTML += "product.name : " + product.name + "<br>";
+            area1.innerHTML += "product.type : " + product.type + "<br>";
+            area1.innerHTML += "product.recipe : " + product.recipe + "<br>";
+            area1.innerHTML += "product.origin : " + product.origin + "<br>";
+        }
+
+    </script>
+
+    <h3>객체 요소 접근하기</h3>
+    <button onclick="test2();">실행 확인</button>
+
+    <div id="area2"></div>
+
+    <script>
+        function test2(){
+            // 객체명['속성명'] / 객체명.속성명
+
+            var obj = { 
+                // 속성명 : '속성값'
+                'I LOVE 유' : '최준',
+                'I HATE !@#$%' : '홍길동'
+             };
+
+             var area2 = document.getElementById('area2');
+
+             // 속성 명에 띄어쓰기나 특수문자가 들어있을 경우
+             // .으로 접근할 수 없다  -> [] 으로 접근해야 한다.
+             // area2.innerHTML = obj.'I LOVE 유';
+
+             area2.innerHTML  = obj['I LOVE 유'] + "<br>";
+             area2.innerHTML += obj['I HATE !@#$%'];
+
+        }
+    </script>
+
+    <hr>
+
+    <h3>객체 요소(필드 변수)에 함수 대입하기</h3>
+
+    <button onclick="test3();">실행 확인</button>
+    <div id="area3"></div>
+
+    <script>
+        function test3(){
+            var dog = {
+                name : '루이스',
+                eat : function(food){
+                    document.getElementById('area3').innerHTML
+                      += this.name + '가 ' + food + '을(를) 먹습니다.<br>';
+                }
+            };
+
+            dog.eat('아침밥');
+            dog.eat('내 밥');
+        }
+    </script>
+
+    <h3>객체 반복문(for in)</h3>
+    <button onclick="test4();">실행 확인</button>
+    <div id="area4"></div>
+
+    <script>
+        function test4(){
+            var fruit = {
+                name : '배',
+                price : 15000,
+                origin : '나주',
+                season : '4 season'
+            };
+
+            console.log(fruit);
+
+            var area4 = document.querySelector('#area4');
+
+            for( var key in fruit ){
+                // console.log(key);
+                area4.innerHTML += key + " : " + fruit[key] +"<br>";
+            }
+        }
+    </script>
+
+    <!-- br*2+a[href="00_index.html"]{인덱스로 돌아가기}+br*10 -->
+    
+    <br>
+
+    <h3>with / in</h3>
+
+    이름 : <input type="text" id="name"> <br>
+    국어 : <input type="number" id="kor"> <br>
+    수학 : <input type="number" id="mat"> <br>
+    영어 : <input type="number" id="eng"> <br>
+
+    <button onclick="test5();">실행 확인</button>
+
+    <div id="area5"></div>
+
+    <script>
+        function test5(){
+            var name = document.getElementById('name').value;
+            var kor = parseInt(document.getElementById('kor').value);
+            var mat = parseInt(document.getElementById('mat').value);
+            var eng = parseInt(document.getElementById('eng').value);
+
+            var student = {
+                name : name,
+                kor : kor,
+                mat : mat,
+                eng : eng
+            };
+
+            var area5 = document.getElementById('area5');
+
+            // -----------------------
+            /*
+            area5.innerHTML += 'name : ' + student.name + "<br>";
+            area5.innerHTML += 'kor : ' + student.kor + "<br>";
+            area5.innerHTML += 'mat : ' + student.mat + "<br>";
+            area5.innerHTML += 'eng : ' + student.eng + "<br>";
+            area5.innerHTML += 'sum : ' 
+                + (student.kor + student.mat + student.eng) + "<br>";
+            area5.innerHTML += 'avg : ' 
+                + (student.kor + student.mat + student.eng)/3 + "<br>";
+            */
+
+            // with 키워드
+            // 동일한 객체의 요소라면
+            // 하나로 묶어 조회할 수 있도록 그룹화해주는 문법
+            with(student){
+                area5.innerHTML += 'name : ' + name + "<br>";
+                area5.innerHTML += 'kor : ' + kor + "<br>";
+                area5.innerHTML += 'mat : ' + mat + "<br>";
+                area5.innerHTML += 'eng : ' + eng + "<br>";
+                area5.innerHTML += 'sum : ' 
+                    + (kor + mat + eng) + "<br>";
+                area5.innerHTML += 'avg : ' 
+                    + (kor + mat + eng)/3 + "<br>";
+            }
+
+		// in 연산자
+            area5.innerHTML += 'name 속성이 있나요? ' + ('name' in student) + "<br>";
+            area5.innerHTML += 'age 속성이 있나요? ' + ('age' in student) + "<br>";
+        }
+    </script>
+
+    <h3>객체에 속성 추가 / 제거</h3>
+    <button onclick="test6();">실행 확인</button>
+
+    <script>
+        function test6(){
+            var student = {
+                name : '홍길동'
+            };
+
+            console.log(student);
+
+            // 객체에 속성 추가
+            // JS 는 접근제한자가 없어 
+            // 객체의 요소에 직접 접근이 가능하다.
+            student.name = '고길동';
+            student['kor'] = 80;
+            student['mat'] = 60;
+            student['eng'] = 70;
+
+            console.log(student);
+
+            // 객체의 속성 제거
+            delete(student.eng);
+
+            console.log(student);
+        }
+
+    </script>
+
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기...</a>
+
+    <br><br><br><br><br><br><br><br><br><br>    
+</body>
+</html>

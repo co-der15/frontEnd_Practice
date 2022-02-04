@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document 객체(DOM)</title>
+    <style>
+        div{
+            width : 500px;
+            height : auto;
+            padding : 10px;
+            background : honeydew;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document 객체(DOM)</h1>
+
+    <h3>텍스트(글자) 노드 만들기</h3>
+    <button onclick="test1();">실행 확인</button>
+    <!-- div#area1 -->
+    <div id="area1"></div>
+
+    <script>
+        function test1(){
+            // 태그(Element) 노드 생성하기
+            var el = document.createElement('h3');
+
+            // 태그 안에 들어갈 글자 노드 생성하기
+            var text = document.createTextNode('모가디슈');
+
+            // text -> el
+            el.appendChild(text);
+
+            // el(text) -> div
+            document.getElementById('area1').appendChild(el);
+        }
+    </script>
+
+    <hr>
+
+    <h3>이미지 노드 만들기</h3>
+    <button onclick="addImg();">실행 확인</button>
+    &nbsp;&nbsp;
+    <button onclick="removeImg();">실행 취소</button>
+
+    <div id="area2"></div>
+
+    <script>
+        function addImg(){
+            var imgEl = document.createElement('img');
+
+            // img 태그 속성 추가
+            imgEl.src
+             = 'https://img.hankyung.com/photo/202107/BF.26957486.1.jpg';
+
+            imgEl.width = 100; 
+            imgEl.height = 160;
+            // 생성한 요소에서 지원하는 속성만 가능하다!
+            // imgEl.myAttr = '팝콘먹고싶다';
+
+            document.getElementById('area2').appendChild(imgEl);
+        }
+
+        function removeImg(){
+            var child = document.querySelector('#area2 img:last-child');
+
+            document.getElementById('area2').removeChild(child);
+        }
+    </script>
+
+    <hr>
+
+    <h3>DOM 객체 응용하기</h3>
+
+    <fieldset>
+        <legend>댓글 작성</legend>
+        작성자 : <input type="text" id="userId"> <br>
+        내 용 : <input type="text" id="content"> <br>
+        <button onclick="sendReply();">댓글 작성</button>
+    </fieldset>
+
+    <!-- div#area3>table>(thead>tr>th*4)+tbody#board -->
+    <div id="area3">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>글 번호</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>내용</th>
+                </tr>
+            </thead>
+            <tbody id="board"></tbody>
+        </table>
+    </div>
+
+    <script>
+        var bno = 1;
+
+        function sendReply(){
+            var writer = document.getElementById('userId').value;
+            var content = document.getElementById('content').value;
+            var writeDate = formatDate(new Date());
+
+            // console.log(writer + "/" + content +"/" + writeDate);
+
+            // 돌발 실습 1
+            /*
+            // tbody
+            var tbody = document.getElementById('board');
+            //   - tr (el)
+            var tableRow = document.createElement('tr');
+            //     - td (el)
+            var td1 = document.createElement('td');
+            //       - text: bno  (textNode)
+            var text1 = document.createTextNode(bno++);
+            td1.appendChild(text1);
+            //     - td
+            var td2 = document.createElement('td');
+            //       - text: writer
+            var text2 = document.createTextNode(writer);
+            td2.appendChild(text2);
+            //     - td
+            var td3 = document.createElement('td');
+            //       - text: writeDate
+            var text3 = document.createTextNode(writeDate);
+            td3.appendChild(text3);
+
+            //     - td
+            var td4 = document.createElement('td');
+            //       - text: content
+            var text4 = document.createTextNode(content);
+            td4.appendChild(text4);
+            //   - tr . . .
+
+            tableRow.appendChild(td1);
+            tableRow.appendChild(td2);
+            tableRow.appendChild(td3);
+            tableRow.appendChild(td4);
+            */
+
+            /*
+            var tbody = document.getElementById('board');
+            var tableRow = document.createElement('tr');
+
+            for(var i in [bno++, writer, writeDate, content]){
+                td = document.createElement('td');
+                text = document.createTextNode(tds[i]);
+
+                td.appendChild(text);
+                tableRow.appendChild(td);
+            }
+            
+            tbody.appendChild(tableRow);
+            */
+
+            var tbody = document.getElementById('board');
+
+            tbody.innerHTML += '<tr>'
+                             + '<td>' + bno++ + '</td>'
+                             + '<td>' + writer + '</td>'
+                             + '<td>' + writeDate + '</td>'
+                             + '<td>' + content + '</td>'
+                             + '</tr>';
+        }
+
+        // 날짜 처리 전용 함수 (yyyy-MM-dd)
+        function formatDate(date){
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+
+            return year + '-' + month + '-' + day;
+        }
+    </script>
+
+    <hr>
+
+    <h3>JS 스타일 변경하기</h3>
+
+    <button onclick="testCss();">실행 확인</button>
+    <div id="area4" style="height:200px;"></div>
+
+    <script>
+        function testCss(){
+            var div = document.getElementById('area4');
+
+            div.style.backgroundColor = 'hotpink';
+            div.style.borderRadius = '50px';
+            div.style.width = '200px';
+            div.style.transition = 'all 2s';
+        }
+    </script>
+
+
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기</a>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

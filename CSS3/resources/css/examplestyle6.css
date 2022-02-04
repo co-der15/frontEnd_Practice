@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+h1{
+    font-size : 24px;
+    color: yellowgreen;
+}
+body{
+    background-color: ivory;
+}
+.menu{
+    background: indianred;
+    width: 500px;
+    margin: 0;
+    padding: 10px;
+}
+.menu h2{
+    margin: 5px 0;
+    padding: 0;
+}
+.menu h2 a{
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    color: limegreen;
+    text-shadow: 2px 2px 5px rgb(118, 144, 79);
+    margin: 0;
+    padding: 10px;
+}
+.menu h2 a:hover, .menu h2:active{
+    background: rgb(153, 156, 255);
+    color: navy;
+}
+.menu p{
+    color: rgb(15, 78, 87);
+    padding: 0 10px;
+    margin: 0;
+    height: 0;
+    background: palegoldenrod;
+    overflow: hidden;
+    transition: height 1s ease-in;
+}
+.menu:target p{
+    overflow: auto;
+    height: 100px;
+}

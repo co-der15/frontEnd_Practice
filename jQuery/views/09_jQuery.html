@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 함수</title>
+    <script src="../resources/js/jquery-3.6.0.min.js"></script>
+    <style>
+        #test1{
+            width : 150px;
+            height: 100px;
+            background : lightpink;
+            border : 2px solid salmon;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트 함수</h1>
+
+    <h3>이벤트 객체</h3>
+    <button onclick="test1(event);">실행 확인</button>
+    <script>
+        function test1(e){
+            // 이벤트 객체는 자바스크립트에서 제공하는
+            // 내장 객체이며, 웹 브라우저를 통해 관리하고 있다.
+            console.log(e);
+        }
+    </script>
+
+    <hr>
+
+    <h3>이벤트 연결 함수</h3>
+    <h4>
+        bind() / on() : 특정 요소를 함수(기능:이벤트)와 연결하는 함수<br>
+        unbind() / off() : 특정 요소로부터 연결된 기능을 제거하는 함수<br>
+        ** jQuery3버전 부터 on/off로 사용이 권장된다.
+    </h4>
+
+    <!-- div#test1{기본 상태} -->
+    <div id="test1">기본 상태</div>
+
+    <script>
+        /* bind / unbind */
+        /*
+        $('#test1').bind('mouseenter', function(){
+            $(this).css({
+                background : 'orange',
+                color : 'red'
+            });
+        });
+        $('#test1').bind('mouseleave', function(){
+            $(this).css({
+                background : 'lightpink',
+                color : 'black'
+            });
+        });
+
+        $('#test1').unbind('mouseenter');
+        $('#test1').unbind('mouseleave');
+        */
+
+        /* on / off */
+        // $('#test1').on('click', function(){ ... })
+
+        $('#test1').on({
+            'mouseenter' : function(){
+                $(this).css('background', 'lightgreen');
+            },
+            'mouseleave' : function(){
+                $(this).css('background', 'lightpink');
+            },
+            'click' : function(){
+                $(this).off('mouseenter').off('mouseleave');
+            }
+        })
+
+    </script>
+
+    <hr>
+
+    <h3>one() : 일회용 함수</h3>
+    <h1 id="oneClick">일회용 확인</h1>
+
+    <script>
+        $('#oneClick').one('click', function(){
+            alert("클릭 확인!");
+        });
+    </script>
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기...</a>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

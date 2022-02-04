@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>함수 part.3</title>
+</head>
+<body>
+    <h1>함수 part.3</h1>
+
+    <h3>지역 변수의 범위(scope)</h3>
+    <p>
+        지역 변수의 값은 함수 밖에서 꺼낼 수 없다.
+    </p>
+    <script>
+        function test1(){
+            var name = '홍길동';
+        }
+
+        // alert(name);
+    </script>
+
+    <h3>클로저 함수</h3>
+    <p>
+        return 시 함수를 반환하는 함수
+    </p>
+
+    <button onclick="test2()();">실행 확인</button>
+
+    <script>
+        function test2(){
+            var name = '홍길동'; // private화
+            return function() {
+                alert(name + ' 확인');
+            }
+        }
+    </script>
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기...</a>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

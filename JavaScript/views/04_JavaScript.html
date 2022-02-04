@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>변수와 자료형</title>
+    <script>
+        var str = "전역변수 입니다!";
+        str2 = ""; // var를 생략하는 경우에도 전역변수가 된다.
+        let str3 = "블록변수입니다-_-";
+
+        window.onload = function start(){
+            var str = "나는 지역변수입니다.";
+            var num1 = 100;
+
+            console.log(str); // 지역변수
+            console.log(this.str); // 전역변수
+            console.log(window.str); // 전역변수
+            console.log(str2);
+            console.log(str3);
+
+            if(1 == 1) {
+                let str3 = "나는 if안에 있어요!";
+                console.log(str3);
+            }
+            console.log(str3);
+
+            testFn();
+        }
+
+        function testFn(){
+            console.log(str);
+            console.log(num1);
+        }
+
+    </script>
+</head>
+<body>
+    <h1>변수와 자료형</h1>
+
+    <h3>변수 선언</h3>
+    <p>
+        함수 내부에서 var 변수명; 으로 선언하면 지역변수가 된다. <br>
+        함수 외부에서 선언하면 가장 첫부분에 var 변수명; 혹은 변수명 으로<br>
+        선언하였을 때 전역 변수가 된다. <br>
+        전역변수와 지역변수가 같은 이름일 경우, 지역변수가 우선권을 지닌다. <br>
+        때문에 함수 내부에서 전역 변수를 사용할 때에 window.변수명 혹은 this.변수명<br>
+        형식으로 접근한다.
+    </p>
+
+    <h3>개발자 도구에서 실행내용을 확인해보세요.</h3>
+
+    <hr>
+
+    <h3>자료형(Type)</h3>
+
+    <p>
+        자바스크립트에서는 자료형 별 변수 타입을 지정하지 않는다.<br>
+        처음 변수를 선언할 때 단순히 '변수를 쓰겠다' 라고만 인식하고 <br>
+        실제 변수의 공간은 값이 들어가서 사용할 때 만들어진다.<br>
+        자바 스크립트 에서 자료형을 선언하는 시기는 변수에 리터럴 값이 들어갈 때,<br>
+        해당 변수 값의 자료형을 보고 매칭시켜준다.
+    </p>
+
+    <button type="button" onclick="testFn2();">실행 확인</button>
+
+    <script>
+        function testFn2(){
+            var tmp;
+            console.log("tmp : " + tmp);
+
+            var name = "홍길동";
+            var age = 10;
+            var glass = true;
+            var hobby = ['독서', '영화감상', '코딩']; // 배열
+            var pet = {
+                name : '초코',
+                age : 3,
+                home : '찰리와 초콜릿공장',
+                type : 'milk'
+            }; // JSON
+            var func = function(num1, num2){
+                return num1 +num2;
+            }
+            
+            console.log(typeof(name));
+            console.log(typeof(age));
+            console.log(typeof(glass));
+            console.log(typeof(hobby));
+            console.log(hobby);
+            console.log(typeof(pet));
+            console.log(pet);
+            console.log(typeof(func));
+
+        }
+    </script>
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기...</a>
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

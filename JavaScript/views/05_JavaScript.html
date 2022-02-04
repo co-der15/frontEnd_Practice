@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>String과 Math</title>
+    <style>
+        .area {
+            width : 600px;
+            height: 350px;
+            border : 5px solid black;
+            background : lightpink;
+        }
+    </style>
+</head>
+<body>
+    <h1>String과 Math</h1>
+
+    <h3>String</h3>
+    <p>
+        자바 스크립트는 "", '' 로 묶여있는 값을 모두 문자열이라 판단한다.
+    </p>
+
+    <button onclick="showString();">실행 확인</button>
+
+    <!-- div.area#area1 -->
+    <div class="area" id="area1"></div>
+
+    <script>
+        function showString(){
+            var area1 = document.getElementById('area1');
+            var str1 = "Moni Mani";
+
+            area1.innerHTML = "toUpperCase() : " + str1.toUpperCase() + "<br>";
+            area1.innerHTML += "toLowerCase() : " + str1.toLowerCase() + "<br>";
+            area1.innerHTML += "length : " + str1.length +"<br>";
+            area1.innerHTML += "a의 위치 : " + str1.indexOf('a') + "<br>"; 
+            area1.innerHTML += "문자열 일부 출력 : " +str1.substring(5, 10) + "<br>";
+            for(var i = 0 ; i < str1.length ; i++){
+                area1.innerHTML += "[" + i + "] : " + str1.charAt(i) + "<br>";    
+            }
+            area1.innerHTML += "split() : " + str1.split(" ") + "<br>";
+            console.log(str1.split(' '));
+        }
+    </script>
+
+    <hr>
+
+    <h3>숫자처리 함수</h3>
+    <button onclick="showMath();">함수 확인</button>
+
+    <!-- div.area#area2 -->
+    <div class="area" id="area2"></div>
+
+    <script>
+        function showMath(){
+            var num = 123;
+            var area2 = document.querySelector('#area2');
+
+            area2.innerHTML  = "절댓값 : " + Math.abs(num) + "<br>";
+            area2.innerHTML += "난수 : " + Math.random() + "<br>";
+            area2.innerHTML += "반올림 : " + Math.round(num * 0.1) + "<br>";
+            area2.innerHTML += "올림 : " + Math.ceil(num * 0.1) + "<br>";
+            area2.innerHTML += "내림 : " + Math.floor(num * 0.1) + "<br>";
+        }
+    </script>
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기...</a>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

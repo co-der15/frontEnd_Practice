@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<htm>
+<head>
+    <meta charset="UTF-8">
+    <title>제이쿼리 개요</title>
+    <!-- CDN 방식 추가 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <!-- 장점 : 소스 코드를 별도로 저장할 필요 X, 저장 공간이 여유 -->
+    <!-- 단점 : 인터넷 끊기면 X, 제공하는 서버에 대한 의존도가 높아짐 -->
+
+    <!-- 직접 다운로드 받아 사용 -->
+    <script src="../resources/js/jquery-3.6.0.min.js"></script>
+    <!--
+        Uncompressed - 개발자 전용
+        일반 JS 파일 : 개발자나 사용하는 사람들이 보기 쉽도록
+                          주석, 들여쓰기, 코드 정렬 등을 사용해
+                          가시성(코드 읽기 좋은 정도)을 유지한 파일
+        Compressed - 배포 전용 ( 고객 전용 )
+        min JS 파일 : 소스 코드의 주석, 들여쓰기, 코드 정렬, 변수명 등을
+                         최소화 및 간소화하여 네트워크 상의 데이터 전달 속도를
+                         높인 코드 난독화 파일
+    -->
+</head>
+<body>
+    <h1>제이쿼리 개요</h1>
+
+    <h3>jQuery 란?</h3>
+
+    
+    <p>존 레식에 의해 개발된 
+        JS 경량화(코드를 가볍게, 짧고 단순하게 만듬) 라이브러리</p>
+    
+    <br><br>
+
+    -- jQuery의 장점 -- <br>
+    1. DOM과 관련된 스크립트를 짧고 쉽게 구현하여 구현속도(생산성)을 향상시킨다. <br>
+    2. ajax(비동기 통신), 이벤트 처리, 이펙트 등을 폭넓게 지원한다. <br>
+    3. JQuery와 관련된 확장 플러그인, 오픈 API 를 보다 더, 다양하게 지원한다.
+
+    <br><br>
+
+    -- jQuery의 단점 -- <br>
+    1. JQuery 에 익숙해지면 JS에 약해진다. (난, 더이상 JQuery없이는 살 수 없는 몸이 되었어) <br>
+    2. 관련 확장 플러그인을 쓰고자 할 때 JQuery 버전이 달라 충돌이 발생할 수도 있다.<br>
+    3. JQuery 자체도 자바스크립트 안에서 돌아가기 때문에, 순수 자바 스크립트로 직접 <br>
+       구현하는 것보다 속도가 느릴 수 밖에 없다.
+
+
+    <h3>jQuery 맛보기</h3>
+
+    <p id="p1">
+        내가 그린 기린 그림은 목이 긴 기린 그림이고, <br>
+        네가 그린 기린 그림은 기린이 아니다.
+    </p>
+
+    <button onclick="test1();">실행 확인</button>
+
+    <script>
+        function test1(){
+            // document.getElementById('p1').style.color = 'tomato';
+            $('#p1').css('color', 'tomato');
+            // 외부 라이브러리
+            // $ is not defined
+        }
+    </script>
+
+    <hr>
+
+    <h3>jQuery 연결하기</h3>
+    <p id="p2">
+        1. jQuery 소스 코드를 제공하는 사이트에서<br>
+           인터넷으로 연결하여 사용하는 방법(CDN)<br>
+        ** CDN : Content Delivery Network <br>
+        2. jQuery 사이트에서 직접 다운받아 사용하는 방법<br>
+        ** 압축 / 비압축 버전이 존재한다.
+    </p>
+
+    <script>
+        // JS로 접근할 경우
+        // document.getElementById('p2').style.color = 'yellowgreen';
+        // document.querySelector('#p2').style.backgroundColor = 'navy';
+
+        // jQuery 접근
+        /*
+        $('#p2').css('color', 'blue');
+        $('#p2').css('background', 'lightpink');
+        */
+       $('#p2').css({
+            'color' : 'orangered',
+            'background' : 'lightcyan'
+       });
+    </script>
+
+    <hr>
+
+    <h3>$(document).ready()</h3>
+
+    <p id="3">
+        현재 웹 문서를 읽은 후(onload) ready()함수를 실행하여<br>
+        body.onload 처럼 즉석 실행을 구현한다.
+    </p>
+
+    <script>
+        //JS
+        // (function(){
+        //    document.onload = alert('즉석실행 확인!');
+        // })();
+
+        // jQuery
+        /*
+        jQuery(document).ready(function(){
+            alert('jQuery식 즉석 함수');
+        });
+        */
+
+        // 다이어트 1차
+        /*
+        $(document).ready(function(){
+            alert('축약식 즉석 함수');
+        });
+        */
+
+        // 다이어트 2차(최종본)
+        $(function(){
+            alert('jQuery 즉석실행 최종본!');
+        });
+
+    </script>
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기</a>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

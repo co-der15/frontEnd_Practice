@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>선택자 1</title>
+    <style>
+        /* CSS 주석 */
+        /* *:모든 요소 선택자 */
+        /* * { color : green; } */
+
+        /* 태그 선택자 */
+        li { color : blue; }
+
+        p { color : hotpink; }
+
+        /* 클래스 선택자 */
+        .sun {
+            background : yellow;
+        }
+
+        /* 아이디 선택자 */
+        #a3 {
+            color : white;
+            background : hotpink;
+        }
+
+        #a5 {
+            color : red;
+            background : skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>선택자 1</h1>
+
+    <p>
+        <b>선택자란?</b> <br>
+        특정한 HTML 태그 요소를 선택할 때 사용하는 표기 방식<br>
+        원하는 태그를 '선택'하여 원하는 스타일을 적용할 수 있다.
+    </p>
+
+    <hr>
+
+    <h2>모든 요소 선택자 : *</h2>
+    <p>
+        HTML 안의 모든 요소를 선택할 때 사용하는 기호
+    </p>
+
+    <!-- ul>li{테스트$}*3 -->
+    <ul>
+        <li>테스트1</li>
+        <li>테스트2</li>
+        <li>테스트3</li>
+    </ul>
+    
+    <hr>
+
+    <h2>태그 선택자 : 태그명</h2>
+    <p>
+        HTML 안의 특정 태그를 모두 찾아 스타일을 적용하는 방법
+    </p>
+
+    <hr>
+
+    <h2>클래스 선택자 : .클래스명 </h2>
+    <p>
+        HTML 안의 특정 클래스 속성이 포함된 태그들을 찾아<br>
+        스타일을 적용하는 방법
+    </p>
+
+    <ul>
+        <li class="sun">햇님반 김철수</li>
+        <li class="moon">달님반 배철수</li>
+        <li class="sun">햇님반 김탁구</li>
+        <li class="moon">달님반 오구탁</li>
+        <li class="pul">풀잎반 청정원</li>
+    </ul>
+    <pre class="sun">
+        내용 1, 2, 3
+    </pre>
+
+    <hr>
+
+    <h2>아이디 선택자 : #</h2>
+    <p>
+        HTML 문서 내에 오직 하나뿐인 id 속성을 찾아<br>
+        스타일을 적용하는 방법
+    </p>
+
+    <!-- ol>li{선택자 a$}*5 -->
+    <ol>
+        <li id="a1">선택자 a1</li>
+        <li id="a2">선택자 a2</li>
+        <li id="a3">선택자 a3</li>
+        <li id="a4">선택자 a4</li>
+        <li id="a5">선택자 a5</li>
+    </ol>
+
+    <br><br>
+
+    <a href="00_index.html"> 인덱스로 돌아가기... </a>
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

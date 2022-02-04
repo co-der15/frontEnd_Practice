@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>입력 양식 이벤트</title>
+    <script src="../resources/js/jquery-3.6.0.min.js"></script>
+    <style>
+        .success { 
+            color : seagreen;
+        }
+        .fail {
+            color : crimson;
+        }
+    </style>
+</head>
+<body>
+    <h1>입력 양식 이벤트</h1>
+
+    <div id="wrap">
+        <h1 align="center">회원 가입</h1>
+        <form action="00_index.html">
+            <table align="center">
+                <tr>
+                    <td>이름 : </td>
+                    <td> <input type="text" name="name" id="name"> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label id="nameResult"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>아이디 : </td>
+                    <td><input type="text" name="userId" id="userId"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 : </td>
+                    <td><input type="password" name="userPw1" id="userPw1"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인: </td>
+                    <td><input type="password" name="userPw2" id="userPw2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label id="pwResult"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>이메일 : </td>
+                    <td>
+                        <input type="text" name="email" id="email" size="5" required>
+                        <select name="at" id="at">
+                            <option value="@naver.com">네이버</option>
+                            <option value="@kakao.com">카카오</option>
+                            <option value="@gmail.com">구글</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                        <input type="submit" value="가입">
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="reset" value="작성 취소">
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="button" value="돌아가기">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        $(function(){
+            $('#name').on('keyup', function(){
+                var reg = /^[가-힣]{2,5}$/;
+
+                if( reg.test($('#name').val()) != true){
+                    $('#nameResult').html('한글로 입력하세요.')
+                        .addClass('fail').removeClass('success');
+                } else {
+                    $('#nameResult').html("올바르게 입력했습니다.")
+                    .addClass('success').removeClass('fail');
+                }
+            });
+
+            $('#userPw2,#userPw1').on('change', function(){
+
+                // 만약 비밀번호(userPw1)과 확인(userPw2)의 값이
+                // 서로 일치하지 않는다면 '비밀번호 확인을 다시 해주세요'- 빨간색
+                // 서로 일치한다면 '비밀번호 확인 값과 일치합니다.' - 초록색
+                // 키워드를 pwResult 에 작성하기.
+                if ($('#userPw1').val() == $('#userPw2').val()){
+                    $('#pwResult').html('비밀번호 확인 값과 일치합니다.')
+                    .addClass('success').removeClass('fail');
+                } else {
+                    $('#pwResult').html('비밀번호 확인을 다시 해주세요')
+                    .addClass('fail').removeClass('success');
+                }
+            });
+
+            $('form').on('submit', function(event){
+                if($('.fail').length == 0){
+                    alert('회원 가입 완료!');
+                } else {
+                    alert('작성한 내용을 확인해주세요.');
+                    event.preventDefault();
+                }
+            })
+        })
+    </script>
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기...</a>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

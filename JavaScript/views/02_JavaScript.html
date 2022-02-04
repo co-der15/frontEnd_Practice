@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>데이터 처리하기</title>
+    <style>
+        div { background : lightblue; border : 3px solid darkred;}
+    </style>
+</head>
+<body>
+    <h1>데이터 처리하기</h1>
+
+    <h3>태그 안의 데이터 접근</h3>
+
+    <div id="area1">
+        자바 스크립트를 사용해 태그 안의 값을 읽거나,<br>
+        내용을 변경할 수 있다.
+    </div>
+
+    <br>
+
+    <button type="button" onclick="changeHTML();">실행 확인</button>
+
+    <script>
+        function changeHTML(){
+            // 자바 : int, char, double, String
+            // JS  : var / let (동적바인딩)
+            var divData = document.getElementById('area1');
+
+            // alert(divData);
+
+            var divText = divData.innerHTML;
+            // alert(divText);
+
+            divData.innerHTML = '변경 정보 확인하기';
+        }
+    </script>
+
+    <h3>console.log() 함수 사용하기</h3>
+    <p>
+        console.log() : 개발자 도구에서 특정 내용을<br> 
+                        확인하고자 할 때 사용한다.<br>
+    </p>
+
+    <!-- button[type=button]{실행 확인} -->
+    <button type="button" onclick="printConsole();">실행 확인</button>
+
+    <script>
+        function printConsole(){
+            console.log('결과 확인');
+        }
+    </script>
+
+    <br>
+
+    <h3>window.confirm() 함수</h3>
+    <button type="button" onclick="checkBtn();">실행 확인</button>
+
+    <!-- div#area2 -->
+    <div id="area2"></div>
+
+    <script>
+        function checkBtn(){
+            var result = window.confirm("해당 약관에 동의하시겠습니까?");
+
+            console.log('result : ' + result);
+
+            var str;
+
+            if( result == true ) {
+                str = "정상 처리되었습니다!";
+            } else {
+                str = "약관에 동의하지 않으셨습니다.";
+            }
+
+            var divData = document.getElementById('area2');
+
+            divData.innerHTML = str;
+        }
+    </script>
+
+    <br>
+
+    <h3>window.prompt() 함수</h3>
+    
+    <button type="button" onclick="checkMsg();">실행 확인</button>
+
+    <div id="area3"></div>
+
+    <script>
+        function checkMsg(){
+            var msg = window.prompt("삐 소리후 메시지를 남겨 주세요!");
+
+            var divData = document.getElementById('area3');
+
+            divData.innerHTML = msg;
+
+        }
+    </script>
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기... </a>
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

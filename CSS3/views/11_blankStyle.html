@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>여백 관련 스타일</title>
+    <style>
+
+        .wrap {
+            width : 100px;
+            height: 100px;
+            background : orange;
+        }
+
+        #md {
+            margin : 50px;
+        }
+
+        #pd {
+            padding : 50px;
+        }
+
+        #mp {
+            margin: 30px 50px;
+            /* margin-top, margin-bottom,
+               margin-left, margin-right */
+            padding : 30px 50px;
+            /* padding-OOO top, bottom, left, right */
+
+        }
+    </style>
+</head>
+<body>
+    <h1>여백 관련 스타일</h1>
+
+    <p>
+        margin : 바깥 여백 <br>
+        padding : 안쪽 여백
+    </p>
+
+    <h3>기본 div</h3>
+
+    <!-- div.wrap{기본 모양} -->
+    <div class="wrap">기본 모양</div>
+
+    <h3>margin 적용 시</h3>
+    <!-- div.wrap#md{글 내용} -->
+    <div class="wrap" id="md">글 내용</div>
+
+    <h3>padding 적용 시 </h3>
+    <!-- div.wrap#pd{글 내용} -->
+    <div class="wrap" id="pd">글 내용</div>
+
+    <h3>margin & padding </h3>
+
+    <div class="wrap" id="mp">글 내용</div>
+
+
+
+    <br><br>
+    <a href="00_index.html"> 인덱스로 돌아가기... </a>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

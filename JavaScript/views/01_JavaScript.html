@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>개요</title>
+    <script src="../resources/js/sample.js"></script>
+</head>
+
+<body>
+    
+    <h1>개요</h1>
+
+    <p>
+    <dl>
+        <!-- 설명 문구들을 작성하는 설명 목록 -->
+        <dt>사용 형식</dt> <!-- 설명의 제목 -->
+        <dd>
+            <!-- 설명의 내용 -->
+            <!-- ol>li*3 -->
+            <ol>
+                <li>inline 방식 : <br>
+                    태그 내에 코드를 직접 작성하는 방식
+                    (간단한 소스 코드일 경우)
+                </li>
+                <li>internal 방식 : <br>
+                    script 태그를 선언하여 내부에 <br>
+                    소스코드를 작성하는 방식
+                </li>
+                <li>external 방식 : <br>
+                    외부의 .js 파일을 가져와 현재 웹 문서에 등록하는 방식<br>
+                    (like css를 link 태그로 가져오는 방식)
+                </li>
+            </ol>
+        </dd>
+    </dl>
+    <dl>
+        <dt>작성 시 명심할 사항</dt>
+        <dd>
+            소스코드는 함수(≒ 메소드) 단위로 작성하고, 이벤트 속성을 통해 실행한다.<br>
+            이벤트 속성은 태그마다 지원하는 종류가 다를 수 있으며 <br>
+            일반적으로 on이벤트명 = 실행할 함수명([전달인자 | 매개변수]) 으로<br>
+            이벤트와 스크립트를 연결(binding) 시킨다.
+        </dd>
+    </dl>
+    </p>
+
+    <hr>
+
+    <h2>inline : 태그에 직접 코드 삽입</h2>
+    <button type="button" onclick="alert('Hello!');">실행 확인</button>
+
+    <h2>internal : 태그를 활용하여 코드 연결</h2>
+    <button type="button" onclick="testFn();">실행 확인</button>
+
+    <h2>external : 외부의 JS파일에 명시한 코드 연결</h2>
+
+    <button type="button" onclick="testFn2();">실행 확인</button>
+
+    <br><br>
+
+    <a href="00_index.html">인덱스로 돌아가기...</a>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    
+    <script>
+        // 한 줄 주석
+        /* 여러 줄 주석 */
+        function testFn(){
+            alert("Hello JavaScript!");
+        }
+    </script>
+</body>
+</html>

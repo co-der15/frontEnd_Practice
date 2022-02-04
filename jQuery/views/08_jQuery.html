@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>태그 요소 삽입 함수</title>
+    <script src="../resources/js/jquery-3.6.0.min.js"></script>
+    <style>
+        .item{
+            width : 150px;
+            height: 150px;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        #item1 { background : mediumaquamarine; }
+        #item2 { background : lightcoral; }
+        #item3 { background : seagreen; }
+    </style>
+</head>
+<body>
+    <h1>태그 요소 삽입 함수</h1>
+    
+    <h3>삽입 함수 1</h3>
+    <p>
+        $(A).appendTo(B) : A -> B 안의 마지막에 추가 <br>
+        $(A).prependTo(B) : A -> B 안의 첫번째로 추가 <br>
+        $(A).insertAfter(B) : A를 B 뒤에 추가(동위 요소) <br>
+        $(A).insertBefore(B) : A를 B 앞에 추가(동위 요소)
+    </p>
+
+    <!-- (h1#test$>label{-- 기준 --})*4 -->
+    <h1 id="test1"><label for="test1">-- 기준 --</label></h1>
+    <h1 id="test2"><label for="test2">-- 기준 --</label></h1>
+    <h1 id="test3"><label for="test3">-- 기준 --</label></h1>
+    <h1 id="test4"><label for="test4">-- 기준 --</label></h1>
+
+    <script>
+        $(function(){
+            var interval = setInterval(function(){
+                var $node = $('<label>');
+                $node.text('[-추가-]');
+                // $node.appendTo($('#test1'));
+                // $node.prependTo($('#test2'));
+                // $node.insertAfter($('#test3'));
+                // $node.insertBefore($('#test4'));
+
+                setTimeout(function(){
+                    clearInterval(interval);
+                }, 3000);
+            }, 1000);
+        });
+    </script>
+
+    <hr>
+
+    <h3>삽입 함수 2</h3>
+    <p>
+        $(A).append(B) : A &lt;- B : B를 A 안의 마지막 요소에 추가<br>
+        $(A).prepend(B) : A &lt;- B : B를 A 안의 첫번째 요소로 추가<br>
+        $(A).after(B) : A &lt;- B : B를 A 다음에 추가(동위요소)<br>
+        $(A).before(B) : A &lt;- B : B를 A 앞에 추가<br>
+    </p>
+
+    <!-- h1#test5>label[for='test5']{| 과일박스 |} -->
+    <h1 id="test5">
+        <label for="test5">| 과일박스 |</label>
+    </h1>
+
+    <script>
+        $(function(){
+            var fruits = ['메론', '두리안', '용과', '천혜향'];
+            var cnt = 0;
+
+            var interval = setInterval(function(){
+               // $('#test5').append('<label>' + fruits[cnt] + ', </label>');
+               // $('#test5').prepend('<label>' + fruits[cnt] + ', </label>');
+               // $('#test5').after('<label>' + fruits[cnt] + ', </label>');
+               $('#test5').before('<label>' + fruits[cnt] + ', </label>');
+               cnt++;
+
+               setTimeout(function(){
+                clearInterval(interval);
+               }, 3000);
+            }, 1000);
+
+        })
+    </script>
+
+    <hr>
+
+    <h3>요소 복제 / 삭제</h3>
+    <p>
+        clone() : 특정 요소를 복제<br>
+        remove() / detach() / empty() : 요소 제거
+    </p>
+
+    <!-- div#cloneTest>(div.item#item$>button.copy{복사하기}+button.delete{삭제하기})*3 -->
+    <div id="cloneTest">
+        <div class="item" id="item1">
+            <button class="copy">복사하기</button>
+            <button class="delete">삭제하기</button>
+        </div>
+        <div class="item" id="item2">
+            <button class="copy">복사하기</button>
+            <button class="delete">삭제하기</button>
+        </div>
+        <div class="item" id="item3">
+            <button class="copy">복사하기</button>
+            <button class="delete">삭제하기</button>
+        </div>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        $('.copy').click(function(){
+            // clone( true / false ):
+            // clone(true) : 요소 뿐 아니라 연결된 이벤트까지 복사
+            // clone(false) : 요소만 복사 (기본값은 false)
+            $(this).parent().clone(true).appendTo($('#result'));
+        });
+
+        $('.delete').click(function(){
+            $(this).parent().remove(); // 요소 자체를 지우는 함수
+            // $(this).parent().empty(); // 요소 안의 내용을 텅 비울 때
+            // $(this).parent().detach(); // 요소 모양은 화면에서 지우지만,
+                                      // 연결했던 이벤트 등의 상세 설정은
+                                      // 그대로 유지하는 함수
+        });
+    </script>
+
+    <br><br>
+    
+    <a href="00_index.html">인덱스로 돌아가기...</a>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

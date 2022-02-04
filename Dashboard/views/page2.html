@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Website</title>
+    <link rel="stylesheet" href="../resources/CSS/style2.css">
+    <link rel="stylesheet" href="../resources/CSS/lightslider.css">
+    <script src="../resources/js/JQuery3.3.1.js"></script>
+    <script src="../resources/js/lightslider.js"></script>
+</head>
+<body>
+    <section id="moive">
+        <h2 class="heading">movie list</h2>
+        <ul id="autoWidth" class="cs-hidden">
+            <li class="item-a">
+                <div class="movie-box">
+                    <div class="movie-b-img">
+                        <img src="../resources/IMAGE/m-1.jpg" alt="">
+                    </div>
+                    <div class="moive-b-text">
+                        <strong>kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-b">
+                <div class="movie-box">
+                    <div class="movie-b-img">
+                        <img src="../resources/IMAGE/m-2.jpg" alt="">
+                    </div>
+                    <div class="moive-b-text">
+                        <strong>kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-c">
+                <div class="movie-box">
+                    <div class="movie-b-img">
+                        <img src="../resources/IMAGE/m-3.jpg" alt="">
+                    </div>
+                    <div class="moive-b-text">
+                        <strong>kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-d">
+                <div class="movie-box">
+                    <div class="movie-b-img">
+                        <img src="../resources/IMAGE/m-4.jpg" alt="">
+                    </div>
+                    <div class="moive-b-text">
+                        <strong>kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-e">
+                <div class="movie-box">
+                    <div class="movie-b-img">
+                        <img src="../resources/IMAGE/m-5.jpg" alt="">
+                    </div>
+                    <div class="moive-b-text">
+                        <strong>kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-f">
+                <div class="movie-box">
+                    <div class="movie-b-img">
+                        <img src="../resources/IMAGE/m-6.jpg" alt="">
+                    </div>
+                    <div class="moive-b-text">
+                        <strong>kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-g">
+                <div class="movie-box">
+                    <div class="movie-b-img">
+                        <img src="../resources/IMAGE/m-7.jpeg" alt="">
+                    </div>
+                    <div class="moive-b-text">
+                        <strong>kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+          </ul>
+    </section>
+    <script>
+          $(document).ready(function() {
+    $('#autoWidth').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth').removeClass('cS-hidden');
+        } 
+    });  
+  });
+    </script>
+    
+</body>
+</html>

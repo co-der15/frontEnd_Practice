@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>배치 관련 스타일</title>
+    <style>
+        .outer { position : relative; }
+        .position { border : 1px solid black; }
+
+        .position:nth-child(1) {
+            width : 300px;
+            height: 300px;
+            background : lightpink;
+        }
+
+        .position:nth-child(2){
+            width : 200px;
+            height: 200px;
+            background : lightblue;
+            position : absolute;
+            top : 50px;
+            left : 50px;
+        }
+
+        .position:nth-child(3){
+            width : 100px;
+            height: 100px;
+            background : lightgreen;
+            position : absolute;
+            top: 100px;
+            left : 100px;
+        }
+
+        .fixed-area {
+            width : 80px;
+            height: 35px;
+            text-align:center;
+            background : yellow;
+            /* position : fixed; */
+            top : 500px;
+            left : 300px;
+        }
+
+        .vis {
+            width : 100px;
+            height : 100px;
+            border : 2px solid black;
+        }
+
+        #vis1{ background : lightpink;}
+        #vis2{ 
+            background : lightblue;
+            /* visibility : hidden; */
+            display : none;
+        }
+        #vis3{ background : lightgreen;}
+
+        .wrap {
+            position : relative;
+            border : 3px solid skyblue;
+            height: 200px;
+        }
+
+        .z-test{
+            width : 100px;
+            height: 100px;
+            border : 1px solid black;
+        }
+
+        #zz1 { 
+            background : lightpink;
+            position : absolute;
+            top : 100px;
+            left : 100px;
+            z-index: 100;
+         }
+        
+         #zz2 { 
+            background : lightblue;
+            position : absolute;
+            top : 50px;
+            left : 50px;
+            z-index: 10;
+        }
+
+        #zz3 {
+            background : lightgreen;
+            position : absolute;
+         }
+
+         .float {
+            width : 500px;
+            height: 300px;
+            border : 3px solid crimson;
+         }
+
+         .f-test{
+             border : 2px solid goldenrod;
+             width : 70px;
+             height: 70px;
+             /* float : left; */
+             float: right;
+         }
+
+         .main {
+             width : 500px;
+             height: 250px;
+             border : 3px solid blue;
+         }
+
+         #img-area {
+             width : 150px;
+             height : 230px;
+             background : url('../resources/images/flower1.PNG');
+             background-size : contain;
+             float : right;
+             border : 3px solid yellow;
+         }
+
+         #text-area {
+             width : 300px;
+             height : 230px;
+             border : 3px solid orange;
+         }
+    </style>
+</head>
+<body>
+    <h1>배치 관련 스타일</h1>
+
+    <h3>절대 위치와 상대 위치</h3>
+
+    <!-- div.outer>div.position*3 -->
+    <div class="outer">
+        <div class="position"></div>
+        <div class="position"></div>
+        <div class="position"></div>
+    </div>
+
+    <h3>고정 위치(fixed)</h3>
+    <!-- div.position.fixed-area{Top} -->
+    <div class="position fixed-area">Top</div>
+    
+    <h3>태그 숨기기</h3>
+    <p>
+        visibility : 특정 태그를 숨기는 스타일<br>
+        해당 태그가 있는 그 자리는 그대로 유지<br>
+        <br>
+        display : none;<br>
+         해당 태그를 숨기는 스타일<br>
+    </p>
+
+    <!-- div.vis#vis$*3 -->
+    <div class="vis" id="vis1">김철수</div>
+    <div class="vis" id="vis2">홍길동</div>
+    <div class="vis" id="vis3">박문사</div>
+
+    <hr>
+
+    <h3>페이지 내의 요소 쌓기</h3>
+
+    <!-- div.wrap>div.z-test#zz$*3 -->
+    <div class="wrap">
+        <div class="z-test" id="zz1"></div>
+        <div class="z-test" id="zz2"></div>
+        <div class="z-test" id="zz3"></div>
+    </div>
+
+    <hr>
+
+    <h3>float 속성</h3>
+
+    <div class="float">
+        <div class="f-test"> 1번 내용 </div>
+        <div class="f-test"> 2번 내용 </div>
+        <div class="f-test"> 3번 내용 </div>
+        <div class="f-test"> 4번 내용 </div>
+        <div class="f-test"> 5번 내용 </div>
+        <div id="f-check1"> 내용 확인</div>
+        <div id="f-check2"> 내용 확인</div>
+    </div>
+
+    <hr>
+
+    <h3>float 실습</h3>
+
+    <div class="main">
+       <div id="img-area"></div> 
+       <div id="text-area">
+        자세히 보아야<br> 예쁘다<br> 오래 보아야<br> 사랑스럽다<br> 너도 그렇다.<br> - 나태주, 풀꽃
+       </div>
+    </div>
+
+    <br><br>
+
+    <a href="00_index.html"> 인덱스로 돌아가기...</a>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

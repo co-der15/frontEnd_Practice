@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Website</title>
+    <link rel="stylesheet" href="../resources/CSS/style2.css">
+    <link rel="stylesheet" href="../resources/CSS/lightslider.css">
+    <script src="../resources/js/JQuery3.3.1.js"></script>
+    <script src="../resources/js/lightslider.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="showcase-heading">Movie List</h1>
+            <ul id="autoWidth" class="cs-hidden">
+                <li class="item-a">
+                    <div class="showcase-box">
+                        <img src="../resources/IMAGE/s-1.jpg" alt="">
+                    </div>
+                </li>
+                <li class="item-b">
+                    <div class="showcase-box">
+                        <img src="../resources/IMAGE/s-2.jpg" alt="">
+                    </div>
+                </li>
+                <li class="item-c">
+                    <div class="showcase-box">
+                        <img src="../resources/IMAGE/s-3.jpg" alt="">
+                    </div>
+                </li>
+                <li class="item-d">
+                    <div class="showcase-box">
+                        <img src="../resources/IMAGE/s-4.jpg" alt="">
+                    </div>
+                </li>
+                <li class="item-e">
+                    <div class="showcase-box">
+                        <img src="../resources/IMAGE/s-5.png" alt="">
+                    </div>
+                </li>
+            </ul>
+    </div>
+    <script>
+          $(document).ready(function() {
+    $('#autoWidth').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth').removeClass('cS-hidden');
+        } 
+    });  
+  });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃 관련 스타일</title>
+    <style>
+        .test-size {
+            border : 2px solid black;
+            height : 200px;
+        }
+
+        #test1 {
+            width : 200px;
+        }
+
+        #test2 {
+            width : 75%;
+        }
+
+        .block {
+            width : 150px;
+            height: 150px;
+            border : 1px solid black;
+        }
+
+        .area1{ background : lightpink;}
+        .area2{ background : lightblue;}
+        .area3{ background : lightsalmon;}
+        .area4{ background : lightgreen;}
+        .area5{ background : lightseagreen;}
+
+        .block-test {
+            display : inline;
+        }
+
+        .inline-test {
+            display : inline-block;
+            width : 150px;
+            height: 150px;
+        }
+
+        #res {
+            width : 500px;
+            height: 350px;
+            background : cornflowerblue;
+            padding: 10px;
+        }
+
+        #ch1 {
+            width : 200px;
+            height : 200px;
+            background : snow;
+            display : inline-block;
+        }
+
+        #ch2 {
+            width : 200px;
+            height: 200px;
+            background : yellow;
+            display : inline-block;
+        }
+
+        /* 미디어 쿼리 */
+        @media screen and (max-width : 768px){
+            /* 768px까지는 이 스타일을 적용하겠다! */
+
+            #res {
+                width : 300px;
+                height : 500px;
+                background : cornflowerblue;
+                padding:  10px;
+            }
+
+            #ch1 {
+                width: 270px;
+                height: 150px;
+                display : block;
+            }
+
+            #ch2 {
+                width : 270px;
+                height: 200px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>레이아웃 관련 스타일</h1>
+
+    <h3>가로 세로 속성</h3>
+    <!-- (h4+div.test-size#test$)*2 -->
+    <h4>고정 크기</h4>
+    <div class="test-size" id="test1"></div>
+    <h4>가변 크기</h4>
+    <div class="test-size" id="test2"></div>
+
+    <hr>
+
+    <h3>화면 배치 속성 (block / inline)</h3>
+
+    <!-- block 속성의 div -->
+    <!-- div.block.block-test.area${ div$ }*5 -->
+    <div class="block block-test area1"> div1 </div>
+    <div class="block block-test area2"> div2 </div>
+    <div class="block block-test area3"> div3 </div>
+    <div class="block block-test area4"> div4 </div>
+    <div class="block block-test area5"> div5 </div>
+
+    <hr>
+
+    <!-- inline 속성의 span -->
+    <!-- span.inline.inline-test.area${ span$ }*5 -->
+    <span class="inline inline-test area1"> span1 </span>
+    <span class="inline inline-test area2"> span2 </span>
+    <span class="inline inline-test area3"> span3 </span>
+    <span class="inline inline-test area4"> span4 </span>
+    <span class="inline inline-test area5"> span5 </span>
+
+    <hr>
+
+    <h3>반응형 크기 조절(미디어 쿼리)</h3>
+
+    <!-- div#res>div#ch$*2 -->
+    <div id="res">
+        <div id="ch1"></div>
+        <div id="ch2"></div>
+    </div>
+
+
+    <br><br>
+
+    <a href="00_index.html"> 인덱스로 돌아가기... </a>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
