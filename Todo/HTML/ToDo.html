@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../resources/CSS/todo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../resources/js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    
+    <div class="todo-container">
+        <div class="input">
+            <input type="text" class="form-control" placeholder="New Task" name="">
+            <div class="add"><i class="material-icons">add</i></div>
+        </div>
+
+        <ul class="todo-list">
+
+        </ul>
+    </div>
+    <!-- todo list 추가, delete icon 동작, 값 삭제-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var count = 0;
+            $(".add").click(function(){
+                var inputval = $(".form-control").val();
+                if(inputval != '') {
+                    count ++;
+                    $(".todo-list").append('<li><div class="left-cont"><input type="checkbox" id="check-'+count+'" name=""><label for="check-'+count+'"></label><span>'+inputval+'</span></div><span class="remove"><i class="material-icons">delete</i></span></li>');
+                }
+                $(".form-control").val('');
+            })
+
+            $(document).on('change', 'input[type="checkbox"]', function(){
+                if($(this).is(':checked')){
+                    $(this).closest("li").children(".remove").addClass("active");
+                } else {
+                    $(this).closest("li").children(".remove").removeClass("active"); 
+                }
+            })
+            $(document).on('click', '.remove', function(){
+                $(this).parent().remove();
+            })
+        })
+    </script>
+</body>
+</html>
